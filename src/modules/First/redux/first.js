@@ -12,13 +12,13 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case PLUS_ONE:
-      return {
-        ...state,
-        value: state.value + 1
-      };
+  case PLUS_ONE:
+    return {
+      ...state,
+      value: state.value + 1
+    };
 
-    default:
-      return state;
+  default:
+    return state;
   }
 };
