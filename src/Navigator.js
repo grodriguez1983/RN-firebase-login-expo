@@ -1,23 +1,28 @@
 import { DrawerNavigator } from 'react-navigation';
 
 import Second from './modules/Second';
-import First from './modules/First';
+import Login from './modules/Login';
+import Signup from './modules/Signup';
 
 const SimpleApp = DrawerNavigator(
   {
-    First: {
+    Login: {
       path: '/',
-      screen: First,
+      screen: Login
+    },
+    Signup: {
+      path: '/',
+      screen: Signup
     },
     SecondPage: {
       path: '/second',
-      screen: Second,
-    },
+      screen: Second
+    }
   }, {
-    initialRouteName: 'First',
+    initialRouteName: 'Login',
     contentOptions: {
-      activeTintColor: '#e91e63',
-    },
+      activeTintColor: '#e91e63'
+    }
   }
 );
 
