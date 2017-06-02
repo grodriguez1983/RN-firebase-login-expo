@@ -6,6 +6,7 @@ import styles from './styles';
 export  default class LandingPage extends Component  {
 
   signOut () {
+    console.log('click')
     const  {
       signOut,
       navigation: {
@@ -13,7 +14,7 @@ export  default class LandingPage extends Component  {
       }
     } = this.props;
     signOut().then(() => {
-      navigate('login');
+      navigate('Login');
     });
   }
 
