@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { Field, reduxForm } from 'redux-form';
 
+import KeyboardAwareView  from '../../../../shared/components/KeyboardAwareView';
 import { TextField } from '../../../../shared/reduxForm/TextField';
 import styles from './styles';
 
@@ -20,14 +21,14 @@ import birthdayIcon from  '../../../../../assets/login/signup_birthday.png';
 
 
 class Signup extends Component {
-  
+
   onJoin(createUserWithEmailAndPassword, values) {
     const { email, password} = values;
     createUserWithEmailAndPassword({ email, password });
   }
 
   render() {
-    const { 
+    const {
       props: {
         navigation: {
           navigate
@@ -37,11 +38,12 @@ class Signup extends Component {
       },
       onJoin
     } = this;
-    
+
     return (
+        <KeyboardAwareView>
       <ScrollView style={styles.container}>
-        <Image 
-          source={background} 
+        <Image
+          source={background}
           style={[styles.container, styles.bg, styles.background]}
           resizeMode="cover"
         >
@@ -49,9 +51,9 @@ class Signup extends Component {
 
             <View style={styles.headerIconView}>
               <TouchableOpacity style={styles.headerBackButtonView}  onPress={() => { navigate('Login'); }}>
-                <Image 
-                  source={backIcon} 
-                  style={styles.backButtonIcon} 
+                <Image
+                  source={backIcon}
+                  style={styles.backButtonIcon}
                   resizeMode="contain"
                 />
               </TouchableOpacity>
@@ -67,7 +69,7 @@ class Signup extends Component {
 
             <View style={styles.inputContainer}>
               <View style={styles.iconContainer}>
-                <Image 
+                <Image
                   source={personIcon}
                   style={styles.inputIcon}
                   resizeMode="contain"
@@ -78,16 +80,16 @@ class Signup extends Component {
                 placeholder="Name"
                 name="name"
                 placeholderTextColor="#FFF"
-                underlineColorAndroid='transparent' 
+                underlineColorAndroid='transparent'
                 component={TextField}
               />
             </View>
 
             <View style={styles.inputContainer}>
               <View style={styles.iconContainer}>
-                <Image 
-                  source={emailIcon} 
-                  style={styles.inputIcon} 
+                <Image
+                  source={emailIcon}
+                  style={styles.inputIcon}
                   resizeMode="contain"
                 />
               </View>
@@ -95,16 +97,17 @@ class Signup extends Component {
                 style={[styles.input, styles.whiteFont]}
                 placeholder="Email"
                 name="email"
-                placeholderTextColor="#FFF" 
+                placeholderTextColor="#FFF"
+                underlineColorAndroid='transparent'
                 component={TextField}
               />
             </View>
 
             <View style={styles.inputContainer}>
               <View style={styles.iconContainer}>
-                <Image 
-                  source={lockIcon} 
-                  style={styles.inputIcon} 
+                <Image
+                  source={lockIcon}
+                  style={styles.inputIcon}
                   resizeMode="contain"
                 />
               </View>
@@ -113,16 +116,17 @@ class Signup extends Component {
                 style={[styles.input, styles.whiteFont]}
                 placeholder="Password"
                 name="password"
-                placeholderTextColor="#FFF" 
+                underlineColorAndroid='transparent'
+                placeholderTextColor="#FFF"
                 component={TextField}
               />
             </View>
 
             <View style={styles.inputContainer}>
               <View style={styles.iconContainer}>
-                <Image 
-                  source={birthdayIcon} 
-                  style={styles.inputIcon} 
+                <Image
+                  source={birthdayIcon}
+                  style={styles.inputIcon}
                   resizeMode="contain"
                 />
               </View>
@@ -131,7 +135,7 @@ class Signup extends Component {
                 placeholder="Birthday"
                 name="birthday"
                 placeholderTextColor="#FFF"
-                underlineColorAndroid='transparent' 
+                underlineColorAndroid='transparent'
                 component={TextField}
               />
             </View>
@@ -154,6 +158,7 @@ class Signup extends Component {
           </View>
         </Image>
       </ScrollView>
+        </KeyboardAwareView>
     );
   }
 }

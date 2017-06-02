@@ -1,10 +1,10 @@
 import { DrawerNavigator } from 'react-navigation';
 
-import Second from './modules/Second';
+import LandingPage from './modules/LandingPage';
 import Login from './modules/Login';
 import Signup from './modules/Signup';
 
-const SimpleApp = DrawerNavigator(
+const Navigator = DrawerNavigator(
   {
     Login: {
       path: '/',
@@ -14,9 +14,9 @@ const SimpleApp = DrawerNavigator(
       path: '/',
       screen: Signup
     },
-    SecondPage: {
-      path: '/second',
-      screen: Second
+    LandingPage: {
+      path: '/LandingPage',
+      screen: LandingPage
     }
   }, {
     initialRouteName: 'Login',
@@ -26,4 +26,4 @@ const SimpleApp = DrawerNavigator(
   }
 );
 
-export default SimpleApp;
+export default Navigator;
