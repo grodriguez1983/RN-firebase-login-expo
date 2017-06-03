@@ -78,6 +78,13 @@ const styles = StyleSheet.create({
   },
   whiteFont: {
     color: '#FFF'
+  },
+  loading: {
+    transform: [{ scale: 2}]
+  },
+  loadingBackground: {
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 
