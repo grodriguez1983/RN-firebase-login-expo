@@ -1,7 +1,8 @@
 {
   "parser": "babel-eslint",
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "plugins": [
     "react"
@@ -24,6 +25,7 @@
     "indent": ["error", 2],
     "comma-dangle": ["error", "never"],
     "no-unreachable": 2,
-    "no-use-before-define": 1
+    "no-use-before-define": 1,
+    "no-console": 0
   }
 }

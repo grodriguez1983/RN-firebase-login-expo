@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
   },
   background: {
     width,
-    height,
+    minHeight: height,
+    flex: 1,
     padding: 20
   },
   headerContainer: {
@@ -32,6 +33,7 @@ const styles = StyleSheet.create({
     marginTop: 50
   },
   footerContainer: {
+    paddingTop: 10,
     flex: 1
   },
   headerIconView: {
