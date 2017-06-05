@@ -22,28 +22,26 @@ class LoginScreen extends Component {
 
   onLogin(values) {
     const { email, password} = values;
-    const { 
-      navigator,
+    const {
       signInWithEmailAndPassword
     } = this.props;
     signInWithEmailAndPassword({ email, password }).then(() => {
-      navigator.push('rootNavigation');
+      alert('then');
+      this.props.navigation.navigate('rootNavigation');
     });
   }
 
   componentWillMount() {
-    const { 
-      navigator,
-      rememberSession
+    const {
+        rememberSession
     } = this.props;
     rememberSession().then(() => {
-      navigator.push('rootNavigation');
+      this.props.navigation.navigate('rootNavigation');
     });
   }
 
   render() {
     const {
-      navigator,
       authenticationState: {
         loading
       },
@@ -111,7 +109,7 @@ class LoginScreen extends Component {
             <View style={styles.container}>
               <View style={styles.signupWrap}>
                 <Text style={styles.accountText}>{'Don\'t have an account?'}</Text>
-                <TouchableOpacity activeOpacity={.5} onPress={() => navigator.push('signup')}>
+                <TouchableOpacity activeOpacity={.5} onPress={() => this.props.navigation.navigate('signup')}>
                   <View>
                     <Text style={styles.signupLinkText}>Sign Up</Text>
                   </View>

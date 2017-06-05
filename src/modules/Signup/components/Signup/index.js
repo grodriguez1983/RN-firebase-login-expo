@@ -30,7 +30,9 @@ class Signup extends Component {
   render() {
     const {
       props: {
-        navigator,
+        navigation: {
+          navigate
+        },
         handleSubmit,
         createUserWithEmailAndPassword
       },
@@ -48,7 +50,7 @@ class Signup extends Component {
           <View style={styles.headerContainer}>
 
             <View style={styles.headerIconView}>
-              <TouchableOpacity style={styles.headerBackButtonView}  onPress={() => { navigator.push('login'); }}>
+              <TouchableOpacity style={styles.headerBackButtonView}  onPress={() => { navigate('login'); }}>
                 <Image
                   source={backIcon}
                   style={styles.backButtonIcon}
@@ -148,7 +150,7 @@ class Signup extends Component {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => { navigator.push('login'); }}>
+            <TouchableOpacity onPress={() => {  navigate('login'); }}>
               <View style={styles.signin}>
                 <Text style={styles.greyFont}>Already have an account?<Text style={styles.whiteFont}> Sign In</Text></Text>
               </View>

@@ -18,19 +18,15 @@ export default class TabNavigationExample extends Component {
     first: {
       value
     },
-    plusOne,
-    navigation
+    plusOne
   } = this.props;
-    console.log(this.props);
     return (
     <View style={styles.container}>
       <Text>{value}</Text>
 
       <Button title="PLUS ONE" onPress={plusOne} />
-      <Button title="GO TO SECOND PAGE" onPress={() => { 
-        navigation.performAction(({ tabs }) => {
-          tabs('tab-navigation').jumpToTab('home');
-        }); 
+      <Button title="GO TO SECOND PAGE" onPress={() => {
+        this.props.navigation.navigate('Home');
       }}
       />
     </View>

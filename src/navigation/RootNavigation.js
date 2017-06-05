@@ -14,7 +14,7 @@ import Colors from '../shared/constants/Colors';
 
 export default class RootNavigation extends React.Component {
   componentDidMount() {
-    this._notificationSubscription = this._registerForPushNotifications();
+  //  this._notificationSubscription = this._registerForPushNotifications();
   }
 
   componentWillUnmount() {
@@ -23,11 +23,11 @@ export default class RootNavigation extends React.Component {
 
   render() {
     return (
-      <TabNavigation 
-        tabBarHeight={56} 
+      <TabNavigation
+        tabBarHeight={56}
         initialTab="home"
         id="tab-navigation"
-        navigatorUID="tab-navigation"  
+        navigatorUID="tab-navigation"
       >
         <TabNavigationItem
           id="home"
