@@ -20,23 +20,33 @@ import personIcon from '../../../../../assets/login/login1_person.png';
 
 class LoginScreen extends Component {
 
+  logued = false;
   onLogin(values) {
     const { email, password} = values;
     const {
       signInWithEmailAndPassword
     } = this.props;
     signInWithEmailAndPassword({ email, password }).then(() => {
-      alert('then');
-      this.props.navigation.navigate('rootNavigation');
+      if (!this.logued) {
+        this.logued = true;
+        this.props.navigation.navigate('rootNavigation');
+      } else {
+        this.logued = false;
+      }
     });
   }
 
   componentWillMount() {
     const {
-        rememberSession
+      rememberSession
     } = this.props;
     rememberSession().then(() => {
-      this.props.navigation.navigate('rootNavigation');
+      if (!this.logued) {
+        this.logued = true;
+        this.props.navigation.navigate('rootNavigation');
+      } else {
+        this.logued = false;
+      }
     });
   }
 
@@ -78,6 +88,7 @@ class LoginScreen extends Component {
                   placeholderTextColor="#FFF"
                   style={[styles.input, styles.whiteFont]}
                   underlineColorAndroid='transparent'
+                  keyboardType='email-address'
                   component={TextField}
                 />
               </View>

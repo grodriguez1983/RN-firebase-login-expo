@@ -24,15 +24,6 @@ const MyApp = TabNavigator({
 
 
 export default StackNavigator({
-  home: {
-    screen: LandingPage
-  },
-  links: {
-    screen: First
-  },
-  settings: {
-    screen: Signup
-  },
   login: {
     screen: Login
   },

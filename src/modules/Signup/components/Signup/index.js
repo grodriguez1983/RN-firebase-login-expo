@@ -99,6 +99,7 @@ class Signup extends Component {
                 name="email"
                 placeholderTextColor="#FFF"
                 underlineColorAndroid='transparent'
+                keyboardType='email-address'
                 component={TextField}
               />
             </View>
